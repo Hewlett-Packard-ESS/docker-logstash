@@ -6,7 +6,7 @@ ENV LS_PKG_NAME logstash-1.4.2
 # Install logstash.
 RUN cd /opt && \
     wget --quiet https://download.elasticsearch.org/logstash/logstash/$LS_PKG_NAME.tar.gz && \
-    tar xzvf $LS_PKG_NAME.tar.gz && \
+    tar xzf $LS_PKG_NAME.tar.gz && \
     rm -f $LS_PKG_NAME.tar.gz  && \
     mv $LS_PKG_NAME logstash 
 
@@ -21,4 +21,4 @@ EXPOSE 9303
 COPY services/* /etc/supervisord.d/
 
 # Mount logstash.conf
-ADD storage/logstash.conf /storage/logstash.conf
+COPY storage/logstash.conf /storage/logstash.conf
