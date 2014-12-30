@@ -1,1 +1,1 @@
-docker build -t hpess/logstash:latest .
+sudo docker build -t hpess/logstash:latest .
