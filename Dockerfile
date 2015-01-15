@@ -21,4 +21,4 @@ EXPOSE 9303
 COPY services/* /etc/supervisord.d/
 
 # Mount logstash.conf
-COPY storage/logstash.conf /storage/logstash.conf
+COPY storage/logstash/logstash.conf /storage/logstash/logstash.conf
