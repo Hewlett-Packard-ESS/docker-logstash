@@ -11,7 +11,7 @@ RUN cd /opt && \
     mv $LS_PKG_NAME logstash 
 
 # Install contrib plugins
-#RUN /opt/logstash/bin/plugin install contrib
+RUN /opt/logstash/bin/plugin install contrib
 
 # Kibana
 EXPOSE 9292
