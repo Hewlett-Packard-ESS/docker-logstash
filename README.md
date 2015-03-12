@@ -1,4 +1,5 @@
 ![Logstash](/logstash.png?raw=true "Logstash")
+
 This container builds on hpess/jre by adding Logstash. Currently installing logstash 1.4.2
 
 ## Use
@@ -25,4 +26,6 @@ Default values are:
 Or if you prefer, stick your own config in /storage/logstash.conf
 
 ## License
-This application is distributed unter the MIT License (MIT)
+This docker application is distributed unter the MIT License (MIT).
+
+Logstash itself is licenced under the [Apache](https://github.com/elastic/logstash/blob/master/LICENSE)
