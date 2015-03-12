@@ -28,4 +28,4 @@ Or if you prefer, stick your own config in /storage/logstash.conf
 ## License
 This docker application is distributed unter the MIT License (MIT).
 
-Logstash itself is licenced under the [Apache](https://github.com/elastic/logstash/blob/master/LICENSE)
+Logstash itself is licenced under the [Apache](https://github.com/elastic/logstash/blob/master/LICENSE) License.
