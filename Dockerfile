@@ -1,5 +1,5 @@
 FROM hpess/jre
-MAINTAINER Paul Cooke <paul.cooke@hp.com>
+MAINTAINER Karl Stoney <karl.stoney@hp.com> 
 
 ENV LS_PKG_NAME logstash-1.4.2
 
@@ -13,12 +13,14 @@ RUN cd /opt && \
 # Install contrib plugins
 RUN /opt/logstash/bin/plugin install contrib
 
-# Kibana
-EXPOSE 9292
-EXPOSE 9303
-
-# Add the services
+# Setup the service and cookbooks
 COPY services/* /etc/supervisord.d/
+COPY cookbooks/ /chef/cookbooks/
 
-# Mount logstash.conf
-COPY storage/logstash/logstash.conf /storage/logstash/logstash.conf
+# Expose the ports
+EXPOSE 9292 9303
+
+# Setup the environment
+ENV HPESS_ENV logstash
+ENV chef_node_name logstash.docker.local
+ENV chef_run_list logstash

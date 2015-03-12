@@ -1,8 +1,0 @@
-logstash:
-    image: hpess/logstash
-    hostname: logstash
-    ports:
-        - "9292:9292"
-        - "9303:9303/udp"
-    volumes:
-        - ./storage:/storage

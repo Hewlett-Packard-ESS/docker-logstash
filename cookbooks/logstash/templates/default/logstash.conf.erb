@@ -1,0 +1,14 @@
+input {
+  udp {
+    host 	=> "0.0.0.0"
+    port 	=> 9303
+    tags 	=> [<%= @udp_tags %>]
+    codec 	=> "<%= @udp_codec %>"
+  }
+}
+
+output {
+  elasticsearch_http {
+    host => '<%= @elastic_url %>'
+  }
+}
