@@ -17,6 +17,10 @@ RUN /opt/logstash/bin/plugin install contrib
 COPY services/* /etc/supervisord.d/
 COPY cookbooks/ /chef/cookbooks/
 
+# Set the correct user permissions on the files
+RUN chown -R docker:docker /opt/logstash && \
+    chown -R docker:docker /storage
+
 # Expose the ports
 EXPOSE 9292 9303
 
