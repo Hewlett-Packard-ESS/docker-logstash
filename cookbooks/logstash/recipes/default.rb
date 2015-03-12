@@ -26,5 +26,5 @@ template '/storage/logstash.conf' do
   variables config 
   owner     'docker'
   group     'docker'
-  action    :create
+  action    :create_if_missing
 end
