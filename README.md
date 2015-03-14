@@ -10,9 +10,10 @@ An exmaple docker-compose file would be:
 logstash:
   image: hpess/logstash
   hostname: logstash
+  environment:
     udp_tags:    'tag1,tag2'
     udp_codec:   'json'
-    elastic_url: 'http://elasticsearch:9200'                                                                                        
+    elastic_url: 'http://elasticsearch:9200'                                                                          
   ports:
     - "9303:9303/udp"
 ```
