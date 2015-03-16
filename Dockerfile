@@ -1,4 +1,4 @@
-FROM hpess/jre
+FROM hpess/jre:master
 MAINTAINER Karl Stoney <karl.stoney@hp.com> 
 
 ENV LS_PKG_NAME logstash-1.4.2
