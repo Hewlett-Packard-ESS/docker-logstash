@@ -26,6 +26,9 @@ Default values are:
 
 Or if you prefer, stick your own config in /storage/logstash.conf
 
+## Contrib
+... plugins are installed.
+
 ## License
 This docker application is distributed unter the MIT License (MIT).
 

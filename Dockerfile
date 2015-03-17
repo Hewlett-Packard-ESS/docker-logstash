@@ -8,18 +8,14 @@ RUN cd /opt && \
     wget --quiet https://download.elasticsearch.org/logstash/logstash/$LS_PKG_NAME.tar.gz && \
     tar xzf $LS_PKG_NAME.tar.gz && \
     rm -f $LS_PKG_NAME.tar.gz  && \
-    mv $LS_PKG_NAME logstash 
-
-# Install contrib plugins
-RUN /opt/logstash/bin/plugin install contrib
+    mv $LS_PKG_NAME logstash && \ 
+    /opt/logstash/bin/plugin install contrib && \
+    chown -R docker:docker /opt/logstash && \
+    chown -R docker:docker /storage
 
 # Setup the service and cookbooks
 COPY services/* /etc/supervisord.d/
 COPY cookbooks/ /chef/cookbooks/
-
-# Set the correct user permissions on the files
-RUN chown -R docker:docker /opt/logstash && \
-    chown -R docker:docker /storage
 
 # Expose the ports
 EXPOSE 9292 9303
