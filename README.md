@@ -11,17 +11,19 @@ logstash:
   image: hpess/logstash
   hostname: logstash
   environment:
-    udp_tags:    'tag1,tag2'
-    udp_codec:   'json'
-    elastic_url: 'http://elasticsearch:9200'                                                                          
+    udp_tags:      'tag1,tag2'
+    udp_codec:     'json'
+    elastic_url:   'elasticsearch:9200'
+	elastic_proto: 'http' 
   ports:
     - "9303:9303/udp"
 ```
 Default values are:
 ``` 
-  udp_tags:    'udp_in'
-  udp_codec:   'json'
-  elastic_url: 'http://elasticsearch:9200'
+  udp_tags:      'udp_in'
+  udp_codec:     'json'
+  elastic_url:   'elasticsearch:9200'
+  elastic_proto: 'http'
 ```
 
 Or if you prefer, stick your own config in /storage/logstash.conf

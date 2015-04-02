@@ -8,7 +8,8 @@ input {
 }
 
 output {
-  elasticsearch_http {
+  elasticsearch {
     host => '<%= @elastic_url %>'
+	protocol => '<%= @elastic_proto %>'
   }
 }
