@@ -1,5 +1,5 @@
 logstash:
-  image: hpess/logstash
+  build: ./pluginExample
   hostname: logstash
   environment:
     DEBUG: 'true'
