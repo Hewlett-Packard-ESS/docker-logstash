@@ -1,7 +1,7 @@
 FROM hpess/jre:master
 MAINTAINER Karl Stoney <karl.stoney@hp.com> 
 
-ENV LS_PKG_NAME logstash-1.4.2
+ENV LS_PKG_NAME logstash-1.5.0.rc2
 
 # Install logstash.
 RUN cd /opt && \
@@ -9,7 +9,6 @@ RUN cd /opt && \
     tar xzf $LS_PKG_NAME.tar.gz && \
     rm -f $LS_PKG_NAME.tar.gz  && \
     mv $LS_PKG_NAME logstash && \ 
-    /opt/logstash/bin/plugin install contrib && \
     chown -R docker:docker /opt/logstash && \
     chown -R docker:docker /storage
 
@@ -17,8 +16,8 @@ RUN cd /opt && \
 COPY services/* /etc/supervisord.d/
 COPY cookbooks/ /chef/cookbooks/
 
-# Expose the ports
-EXPOSE 9292 9303
+# Expose the UDP port
+EXPOSE 9303 
 
 # Setup the environment
 ENV HPESS_ENV logstash
