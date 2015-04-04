@@ -29,7 +29,11 @@ Default values are:
 Or if you prefer, stick your own config in /storage/logstash.conf
 
 ## Plugins
-Logstash has changed the way it handles plugins quite dramatically, the contrib package no longer exists and instead you install specific plugins.  I didn't want to bloat this image with plugins not everybody uses so subsequently I have left it to you to decide what plugins you want.  The included `docker-compose` file shows how to build an image with the plugins you need.
+Logstash has changed the way it handles plugins quite dramatically, the contrib package no longer exists and instead you install specific plugins.  
+
+I didn't want to bloat this image with plugins not everybody uses so subsequently I have left it to you to decide what plugins you want.  The included `docker-compose` file shows how to build an image with the plugins you need.
+
+However, I have selfishly included hpess-logstash-codec-cef and logstash-output-syslog, as they're two we use quite heavily :)
 
 ## License
 This docker application is distributed unter the MIT License (MIT).

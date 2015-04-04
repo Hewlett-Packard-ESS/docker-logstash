@@ -12,6 +12,9 @@ RUN cd /opt && \
     chown -R docker:docker /opt/logstash && \
     chown -R docker:docker /storage
 
+# Install some plugins
+RUN /opt/logstash/bin/plugin install hpess-logstash-codec-cef logstash-output-syslog 
+   
 # Setup the service and cookbooks
 COPY services/* /etc/supervisord.d/
 COPY cookbooks/ /chef/cookbooks/
