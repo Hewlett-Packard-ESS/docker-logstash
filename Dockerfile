@@ -1,7 +1,7 @@
 FROM hpess/jre:master
 MAINTAINER Karl Stoney <karl.stoney@hp.com> 
 
-ENV LS_PKG_NAME logstash-1.5.0.rc2
+ENV LS_PKG_NAME logstash-1.5.0
 
 # Install logstash.
 RUN cd /opt && \
