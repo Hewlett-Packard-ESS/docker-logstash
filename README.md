@@ -1,6 +1,6 @@
 ![Logstash](/logstash.png?raw=true "Logstash")
 
-This container builds on hpess/jre by adding Logstash. Currently installing logstash 1.5.0
+This container builds on hpess/jre by adding Logstash. Currently installing logstash 1.5.2
 
 ## Use
 Out of the box, we set up a simple udp json listener which pumps data into elasticsearch without really doing much.
