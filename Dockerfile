@@ -13,7 +13,7 @@ RUN cd /opt && \
     chown -R docker:docker /storage
 
 # Install some plugins
-RUN /opt/logstash/bin/plugin install hpess-logstash-codec-cef logstash-output-syslog 
+RUN /opt/logstash/bin/plugin install logstash-codec-cef logstash-output-syslog logstash-filter-prune
    
 # Setup the service and cookbooks
 COPY services/* /etc/supervisord.d/
